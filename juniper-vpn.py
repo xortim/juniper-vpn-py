@@ -234,6 +234,8 @@ if __name__ == "__main__":
                         help='VPN host name')
     parser.add_argument('-u', '--username', type=str,
                         help='User name')
+    parser.add_argument('-p', '--password', type=str,
+                        help='Password')
     parser.add_argument('-o', '--oath', type=str,
                         help='OATH key for two factor authentication (hex)')
     parser.add_argument('-c', '--config', type=str,
@@ -249,7 +251,6 @@ if __name__ == "__main__":
                         help='External command')
 
     args = parser.parse_args()
-    args.__dict__['password'] = None
 
     if len(args.action) and args.action[0] == '--':
         args.action = args.action[1:]
